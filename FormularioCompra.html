@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/Formulario.css">
+    <link rel="shortcut icon" href="./imagenes/favicon.png" type="image/x-icon">
+
+  </head>
+  <div class="navbar">
+    <img src="./imagenes/librosapi.png" alt="libros" >
+    <h1><b>Libby</b></h1>
+    <a href="inicioSesion.html">Inicio de Sesión</a>
+    <a href="Libros.html">Libros</a>
+    </div>
+  <body>
+    <form class="row g-3 needs-validation" novalidate>
+        <hr>
+        <h3>Datos de entrega</h3>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip01" class="form-label" ><b>¿Quien recibira?</b></label>
+          <input type="text" class="form-control" id="validationTooltip01" required style="background-color: #db9db6ad;" >
+          <div class="valid-tooltip">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltipUsername" class="form-label"><b>Usuario</b></label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please choose a unique and valid username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltip04" class="form-label"><b>Estado</b></label>
+            <input type="text" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please select a valid state.
+            </div>
+          </div>
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip03" class="form-label"><b>Ciudad</b></label>
+          <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+          <div class="invalid-tooltip">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip03" class="form-label"><b>Calle y Numero</b></label>
+          <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+          <div class="invalid-tooltip">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip05" class="form-label"><b>Numero de Telefono</b></label>
+          <input type="text" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
+          <div class="invalid-tooltip">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltip05" class="form-label"><b>Nombre del libro</b></label>
+            <input type="text" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="col-md-3 position-relative">
+            <label for="validationTooltip05" class="form-label"><b>Cantidad</b></label>
+            <input type="number" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <hr>
+          <h3>Datos en la tarjeta</h3>
+          <div class="col-md-6 position-relative">
+            <label for="validationTooltip03" class="form-label"><b>Nombre completo</b></label>
+            <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-6 position-relative">
+            <label for="validationTooltip03" class="form-label"><b>Numero</b></label>
+            <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-2 position-relative">
+            <label for="validationTooltip03" class="form-label"><b>Fecha Vencimiento</b></label>
+            <input type="date" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-1 position-relative">
+            <label for="validationTooltip03" class="form-label"><b>CVV</b></label>
+            <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid city.
+            </div>
+          </div>
+        <div class="col-12">
+          <button class="btn btn-light" type="submit">Comprar</button>
+        </div>
+      </form>
+      
+  </body>
+</html>
