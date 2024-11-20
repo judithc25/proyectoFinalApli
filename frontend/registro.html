@@ -16,55 +16,48 @@
     <a href="Libros.html">Libros</a>
     </div>
   <body>
-    <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltip01" class="form-label" ><b>Nombre</b></label>
-          <input type="text" class="form-control" id="validationTooltip01" required style="background-color: #db9db6ad;" >
-          <div class="valid-tooltip">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltip02" class="form-label"><b>Apellido</b></label>
-          <input type="text" class="form-control" id="validationTooltip02" value="" required style="background-color: #db9db6ad;">
-          <div class="valid-tooltip">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltipUsername" class="form-label"><b>Usuario</b></label>
-          <div class="input-group has-validation">
-            <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required style="background-color: #db9db6ad;">
-            <div class="invalid-tooltip">
-              Please choose a unique and valid username.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label"><b>Numero de Telefono</b></label>
-          <input type="text" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
-          </div>
-        </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label"><b>Contraseña</b></label>
-          <input type="password" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
-          </div>
-        </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label"><b>Confirma tu Contraseña</b></label>
-          <input type="password" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
-          </div>
-        </div>
-        <div class="col-12">
+    <form class="row g-3 needs-validation" novalidate action="../src/registro.php" method="POST">
+      <div class="col-md-4 position-relative">
+          <label for="nombre" class="form-label"><b>Nombre</b></label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-4 position-relative">
+          <label for="apellido" class="form-label"><b>Apellido</b></label>
+          <input type="text" class="form-control" id="apellido" name="apellido" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-4 position-relative">
+          <label for="usuario" class="form-label"><b>Usuario</b></label>
+          <input type="text" class="form-control" id="usuario" name="usuario" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-3 position-relative">
+          <label for="telefono" class="form-label"><b>Número de Teléfono</b></label>
+          <input type="text" class="form-control" id="telefono" name="telefono" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-3 position-relative">
+          <label for="correo" class="form-label"><b>Correo</b></label>
+          <input type="email" class="form-control" id="correo" name="correo" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-3 position-relative">
+          <label for="direccion" class="form-label"><b>Dirección</b></label>
+          <input type="text" class="form-control" id="direccion" name="direccion" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-3 position-relative">
+          <label for="ciudad" class="form-label"><b>Ciudad</b></label>
+          <input type="text" class="form-control" id="ciudad" name="ciudad" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-3 position-relative">
+          <label for="estado" class="form-label"><b>Estado</b></label>
+          <input type="text" class="form-control" id="estado" name="estado" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-md-3 position-relative">
+          <label for="password" class="form-label"><b>Contraseña</b></label>
+          <input type="password" class="form-control" id="password" name="password" required style="background-color: #db9db6ad;">
+      </div>
+      <div class="col-12">
           <button class="btn btn-light" type="submit">Registrarse</button>
-        </div>
-      </form>
+      </div>
+  </form>
+  
       
   </body>
 </html>

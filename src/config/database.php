@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = 'localhost:8889'; // Dirección del servidor
-    private $db_name = 'bibliotecavirtual3'; // Nombre de la base de datos
+    private $db_name = 'bibliotecavirtual5'; // Nombre de la base de datos
     private $username = 'root'; // Usuario de la base de datos
     private $password = 'root'; // Contraseña del usuario
     private $conn;
