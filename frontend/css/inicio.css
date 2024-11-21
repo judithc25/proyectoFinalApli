@@ -40,3 +40,10 @@ body {
     background-color: #E1BEE7;
 }
 
+p {
+font-family: "Edu AU VIC WA NT Arrows", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500px;
+  font-style: normal;
+}
+

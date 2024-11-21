@@ -27,6 +27,53 @@ if (!isset($_SESSION['usuario'])) {
     <a href="Libros.html">Libros</a>
     </div>
   <body>
-    <h1>Mi Perfil</h1>
+    <h3>___________________________________________________________________________________</h3>
+    <div class="card" style="background-color:#D1C4E9">
+                    <div class="card-header" style="background-color:#B39DDB">
+                        Mis datos personales
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead class="table-success" >
+                                <tr>
+                                    <th style="background-color:#B39DDB">Id</th>
+                                    <th style="background-color:#B39DDB">Nombre</th>
+                                    <th style="background-color:#B39DDB">Apellido</th>
+                                    <th style="background-color:#B39DDB">Direccion</th>
+                                    <th style="background-color:#B39DDB">Ciudad</th>
+                                    <th style="background-color:#B39DDB">Estado</th>
+                                    <th style="background-color:#B39DDB">Correo</th>
+                                    <th style="background-color:#B39DDB">Telefono</th>
+                                    <th style="background-color:#B39DDB">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaMiperfil">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card" style="background-color:#D1C4E9">
+                    <div class="card-header" style="background-color:#B39DDB">
+                        Mis compras
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead class="table-success" >
+                                <tr>
+                                    <th style="background-color:#B39DDB">Nombre Libro</th>
+                                    <th style="background-color:#B39DDB">Autor</th>
+                                    <th style="background-color:#B39DDB">Cantidad</th>
+                                    <th style="background-color:#B39DDB">fecha compra</th>
+                                    <th style="background-color:#B39DDB">direccion de envio</th>
+                                    <th style="background-color:#B39DDB">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaMiperfil">
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
   </body>
 </html>
