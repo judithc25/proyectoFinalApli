@@ -11,7 +11,7 @@ class librosRepository implements Iinventario
     }
 
     public function crearLibro($inventario) {
-        $sql = "INSERT INTO inventario (id, nombre, descripcion, categoria, cantidad, autor, precio, ) VALUES (:nombre, :descripcion, :tipo, :precio, :imagen)";
+        $sql = "INSERT INTO inventario (id, nombre, descripcion, categoria, cantidad, autor, precio ) VALUES (:nombre, :descripcion, :tipo, :precio, :imagen)";
         $resultado = $this->conn->prepare($sql);
         $resultado->bindParam(':id', $producto->id);
         $resultado->bindParam(':nombre', $producto->nombre);
@@ -43,7 +43,7 @@ class librosRepository implements Iinventario
         return ['mensaje' => 'Error al actualizar producto'];
     }
 
-    public function borrarProducto($producto) {
+    public function borrarLibro($inventario) {
         $sql = "DELETE FROM productos WHERE idproducto = :idproducto";
         $resultado = $this->conn->prepare($sql);
         $resultado->bindParam(':idproducto', $idproducto);
@@ -54,7 +54,7 @@ class librosRepository implements Iinventario
         return ['mensaje' => 'Error al borrar producto'];
     }
 
-    public function obtenerProductos($producto) {
+    public function obtenerProductos|($producto) {
         $sql = "SELECT * FROM productos";
         $resultado = $this->conn->prepare($sql);
         $resultado->execute();

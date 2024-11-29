@@ -1,8 +1,8 @@
 <?php
     class Puestos {
-        public $id_puesto;
-        public $titulo_puesto;
-        public $descripcion;
+        public $idpuesto;
+        public $titulop;
+        public $descripcionp;
     }
 
 ?>

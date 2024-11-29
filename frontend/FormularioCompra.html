@@ -18,14 +18,7 @@
   <body>
     <form class="row g-3 needs-validation" novalidate>
         <hr>
-        <h3>Datos de entrega</h3>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltip01" class="form-label" ><b>¿Quien recibira?</b></label>
-          <input type="text" class="form-control" id="validationTooltip01" required style="background-color: #db9db6ad;" >
-          <div class="valid-tooltip">
-            Looks good!
-          </div>
-        </div>
+        <h3>Datos de Compra</h3>
         <div class="col-md-4 position-relative">
           <label for="validationTooltipUsername" class="form-label"><b>Usuario</b></label>
           <div class="input-group has-validation">
@@ -33,34 +26,6 @@
             <div class="invalid-tooltip">
               Please choose a unique and valid username.
             </div>
-          </div>
-        </div>
-        <div class="col-md-3 position-relative">
-            <label for="validationTooltip04" class="form-label"><b>Estado</b></label>
-            <input type="text" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
-            <div class="invalid-tooltip">
-              Please select a valid state.
-            </div>
-          </div>
-        <div class="col-md-6 position-relative">
-          <label for="validationTooltip03" class="form-label"><b>Ciudad</b></label>
-          <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
-          <div class="invalid-tooltip">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-6 position-relative">
-          <label for="validationTooltip03" class="form-label"><b>Calle y Numero</b></label>
-          <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
-          <div class="invalid-tooltip">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label"><b>Numero de Telefono</b></label>
-          <input type="text" class="form-control" id="validationTooltip05" required style="background-color: #db9db6ad;">
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
           </div>
         </div>
         <div class="col-md-3 position-relative">
@@ -77,6 +42,13 @@
               Please provide a valid zip.
             </div>
           </div>
+          <div class="col-md-2 position-relative">
+            <label for="validationTooltip03" class="form-label"><b>Fecha Compra</b></label>
+            <input type="date" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
+            <div class="invalid-tooltip">
+              Please provide a valid city.
+            </div>
+          </div>
           <hr>
           <h3>Datos en la tarjeta</h3>
           <div class="col-md-6 position-relative">
@@ -87,7 +59,7 @@
             </div>
           </div>
           <div class="col-md-6 position-relative">
-            <label for="validationTooltip03" class="form-label"><b>Numero</b></label>
+            <label for="validationTooltip03" class="form-label"><b>Numero de tarjeta</b></label>
             <input type="text" class="form-control" id="validationTooltip03" required style="background-color: #db9db6ad;">
             <div class="invalid-tooltip">
               Please provide a valid city.

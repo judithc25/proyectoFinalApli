@@ -1,12 +1,12 @@
 <?php
     class Libro {
-        public $id_libro;
-        public $precio;
-        public $descripcion;
-        public $categoria;
-        public $autor;
-        public $autor;
-        public $url_imagen;
+        public $idlibro;
+        public $preciol;
+        public $descripcionl;
+        public $categorial;
+        public $autorl;
+        public $urlimagen;
+        public $namel;
     }
 
 ?>

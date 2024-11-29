@@ -1,12 +1,11 @@
 <?php
-/*
+
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    // Redirigir al inicio de sesión si no está autenticado
-    header("Location: iniciar_sesion.php");
+    header("Location: inicioSesion.html");
     exit;
 }
-    */
+
 ?>
 
 <!doctype html>
@@ -27,7 +26,7 @@ if (!isset($_SESSION['usuario'])) {
     <a href="Libros.html">Libros</a>
     </div>
   <body>
-    <h3>___________________________________________________________________________________</h3>
+  <hr style="margin-top: 2%; width: 100%; height: 20px; background-color: rgb(174, 144, 185);">
     <div class="card" style="background-color:#D1C4E9">
                     <div class="card-header" style="background-color:#B39DDB">
                         Mis datos personales
@@ -36,7 +35,6 @@ if (!isset($_SESSION['usuario'])) {
                         <table class="table table-striped">
                             <thead class="table-success" >
                                 <tr>
-                                    <th style="background-color:#B39DDB">Id</th>
                                     <th style="background-color:#B39DDB">Nombre</th>
                                     <th style="background-color:#B39DDB">Apellido</th>
                                     <th style="background-color:#B39DDB">Direccion</th>
@@ -53,6 +51,10 @@ if (!isset($_SESSION['usuario'])) {
                         </table>
                     </div>
                 </div>
+                <br>
+                <br>
+                <br>
+                <hr style="margin-top: 8%; width: 100%; height: 20px; background-color: rgb(174, 144, 185);">
                 <div class="card" style="background-color:#D1C4E9">
                     <div class="card-header" style="background-color:#B39DDB">
                         Mis compras
@@ -61,12 +63,13 @@ if (!isset($_SESSION['usuario'])) {
                         <table class="table table-striped">
                             <thead class="table-success" >
                                 <tr>
-                                    <th style="background-color:#B39DDB">Nombre Libro</th>
+                                    <th style="background-color:#B39DDB">Libro</th>
                                     <th style="background-color:#B39DDB">Autor</th>
                                     <th style="background-color:#B39DDB">Cantidad</th>
                                     <th style="background-color:#B39DDB">fecha compra</th>
                                     <th style="background-color:#B39DDB">direccion de envio</th>
                                     <th style="background-color:#B39DDB">Total</th>
+                                    <th style="background-color:#B39DDB">Metodo de pago</th>
                                 </tr>
                             </thead>
                             <tbody id="tablaMiperfil">

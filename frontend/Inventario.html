@@ -26,29 +26,37 @@
                         Agregar / Modificar Libros
                     </div>
                     <div class="card-body">
-                        <form id="productForm">
+                        <form id="productForm" action="../src/process_form.php" method="POST">
                             <input type="hidden" id="productId">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre del libro</label>
-                                <input type="text" class="form-control" id="nombre" required>
+                                <input type="text" class="form-control" name="nombre" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="autor" class="form-label">Autor</label>
+                                <input type="text" class="form-control" name="autor" id="autor" required>
                             </div>
                             <div class="mb-3">
                                 <label for="descripcion" class="form-label">Descripcion del libro</label>
-                                <textarea type="text" class="form-control" id="descripcion" rows="3" required></textarea>
+                                <textarea class="form-control" name="descripcion" id="descripcion" rows="3" required></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="form-label">Categoria</label>
-                                <input type="text" class="form-control" id="tipo" required>
+                                <input type="text" class="form-control" name="tipo" id="tipo" required>
                             </div>
                             <div class="mb-3">
                                 <label for="precio" class="form-label">Precio del Libro</label>
-                                <input type="number" class="form-control" id="precio" required>
+                                <input type="number" class="form-control" name="precio" id="precio" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad total</label>
+                                <input type="number" class="form-control" name="cantidad" id="cantidad" required>
                             </div>
                             <div class="mb-3">
                                 <label for="imagen" class="form-label">URL de la imagen del libro</label>
-                                <input type="text" class="form-control" id="imagen" required>
+                                <input type="text" class="form-control" name="imagen" id="imagen" required>
                             </div>
-                            <button class="btn btn-primary" type="submit" id="submitBtn">Agregar Producto</button>
+                            <button class="btn btn-primary" type="submit">Agregar Libro</button>
                         </form>
                     </div>
                 </div>
@@ -63,11 +71,12 @@
                             <thead class="table-success" >
                                 <tr>
                                     <th style="background-color:#B39DDB">Id</th>
-                                    <th style="background-color:#B39DDB">Nombre</th>
+                                    <th style="background-color:#B39DDB">Precio</th>
                                     <th style="background-color:#B39DDB">Descripcion</th>
                                     <th style="background-color:#B39DDB">Categoria</th>
-                                    <th style="background-color:#B39DDB">Precio</th>
-                                    <th style="background-color:#B39DDB">Acciones</th>
+                                    <th style="background-color:#B39DDB">Autor</th>
+                                    <th style="background-color:#B39DDB">urlImagen</th>
+                                    <th style="background-color:#B39DDB">Nombre</th>
                                 </tr>
                             </thead>
                             <tbody id="productTableBosy">
@@ -77,7 +86,49 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const tableBody = document.getElementById('productTableBosy');
+
+    // Fetch para obtener los datos de los libros
+    fetch('../src/get_books.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Verifica si data contiene libros
+            if (Array.isArray(data)) {
+                // Limpia el contenido previo de la tabla
+                tableBody.innerHTML = '';
+
+                // Itera sobre los datos y los agrega a la tabla
+                data.forEach(book => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${book.id_libro}</td>
+                        <td>${book.precio}</td>
+                        <td>${book.descripcion}</td>
+                        <td>${book.categoria}</td>
+                        <td>${book.autor}</td>
+                        <td>${book.urlimagen}</td>
+                        <td>${book.name}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                console.error('La respuesta no contiene un arreglo de libros.');
+            }
+        })
+        .catch(error => {
+            console.error('Error al cargar los libros:', error);
+        });
+});
+    </script>
   </body>
 </html>

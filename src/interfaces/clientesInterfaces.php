@@ -1,6 +1,6 @@
 <?php
 interface ICliente {
-    public function actualizaCliente($cliente);
-    public function borrarCliente($cliente);
+    public function actualizaCliente($idcliente);
+    public function borrarCliente($idcliente);
 }
 ?>
