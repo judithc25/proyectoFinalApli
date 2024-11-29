@@ -16,7 +16,8 @@
     <a href="Libros.html">Libros</a>
     </div>
   <body>
-    <form class="row g-3 needs-validation" novalidate action="../src/registro.php" method="POST">
+    <div id="alert" class="alert d-none" role="alert"></div>
+    <form id="registrationForm1" class="row g-3 needs-validation">
       <div class="col-md-4 position-relative">
           <label for="nombre" class="form-label"><b>Nombre</b></label>
           <input type="text" class="form-control" id="nombre" name="nombre" required style="background-color: #db9db6ad;">
@@ -60,6 +61,32 @@
       <a href="registroEmpleado.php" >¿Quieres ser empleado?</a>
   </form>
   
+  <script>
+    document.getElementById('registrationForm1').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita el envío tradicional del formulario
+
+            const formData = new FormData(this); // Captura los datos del formulario
+
+            fetch('../src/registro.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // Convierte la respuesta a JSON
+            .then(data => {
+                const alertDiv = document.getElementById('alert');
+                alertDiv.className = `alert alert-${data.status === 'success' ? 'success' : 'danger'}`;
+                alertDiv.textContent = data.message;
+                alertDiv.classList.remove('d-none'); // Muestra el mensaje
+            })
+            .catch(error => {
+                const alertDiv = document.getElementById('alert');
+                alertDiv.className = 'alert alert-danger';
+                alertDiv.textContent = 'Hubo un error inesperado.';
+                alertDiv.classList.remove('d-none');
+                console.error(error);
+            });
+        });
+  </script>
       
   </body>
 </html>

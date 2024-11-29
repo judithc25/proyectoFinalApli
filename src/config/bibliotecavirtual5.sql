@@ -12,21 +12,6 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `bibliotecavirtual5`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `clientes`
---
-
 CREATE TABLE `clientes` (
   `id_cliente` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
@@ -40,20 +25,6 @@ CREATE TABLE `clientes` (
   `contraseña` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellido`, `telefono`, `direccion`, `ciudad`, `estado`, `correo`, `usuario`, `contraseña`) VALUES
-(1, 'judith', 'guzman', '456123', 'madero 937', 'valle', 'guanajuato', 'judi@judi.com', 'judi', '$2y$10$Di4E8KYQB6rdU7OdFtFCK.yQQimzlnmqFLD9fhbqfLTZnPwD28d5e'),
-(2, 'carmen', 'guzman', '4', '4', 'valle', 'guana', '4', 'carmen', '$2y$10$CQal9opfh/hE9rTw9zFTeeikNiL/QdtzUg0eD1jhsP0PMtxgphuX.'),
-(3, 'marco', 'marco', '456111', 'marco', 'valle', 'guanajuato', 'marco@marco.com', 'marco1', '$2y$10$NIasVqrs8jmjWXQFqnsPPuXYoiNc0M8AE9VVaLqYFqN5JmuFMs4vW');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `compras`
---
 
 CREATE TABLE `compras` (
   `id_compra` int(11) NOT NULL,
@@ -64,9 +35,7 @@ CREATE TABLE `compras` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `empleados`
---
+
 
 CREATE TABLE `empleados` (
   `id_empleado` int(11) NOT NULL,
@@ -82,9 +51,6 @@ CREATE TABLE `empleados` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `inventario`
---
 
 CREATE TABLE `inventario` (
   `id_inventario` int(11) NOT NULL,
@@ -95,9 +61,7 @@ CREATE TABLE `inventario` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `libros`
---
+
 
 CREATE TABLE `libros` (
   `id_libro` int(11) NOT NULL,

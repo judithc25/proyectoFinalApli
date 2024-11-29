@@ -1,5 +1,4 @@
 <?php
-echo 'Ruta: ' . realpath('config/database.php');
 require_once 'config/database.php';
 
 
@@ -15,6 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $estado = $_POST['estado'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encriptar la contraseña
 
+     // Validar que los campos requeridos no estén vacíos
+     if (!$nombre || !$apellido || !$usuario || !$telefono || !$correo || !$direccion || !$ciudad || !$estado || !$password) {
+        echo json_encode(['status' => 'error', 'message' => 'Por favor, completa todos los campos obligatorios.']);
+        exit();
+    }
+    
     // Conectar con la base de datos
     $database = new Database();
     $conn = $database->getConnection();
@@ -39,15 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Ejecutar la consulta
             if ($stmt->execute()) {
-                echo "Registro exitoso.";
+                echo json_encode(['status' => 'success', 'message' => 'Registro exitoso.']);
             } else {
-                echo "Hubo un error al registrar los datos.";
+                echo json_encode(['status' => 'error', 'message' => 'Hubo un error al registrar los datos.']);
             }
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            echo json_encode(['status' => 'error', 'message' => 'Error en la base de datos: ' . $e->getMessage()]);
         }
     } else {
-        echo "No se pudo conectar a la base de datos.";
+        echo json_encode(['status' => 'error', 'message' => 'No se pudo conectar a la base de datos.']);
     }
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Método no permitido.']);
 }
 ?>
+

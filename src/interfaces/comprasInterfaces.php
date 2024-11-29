@@ -1,6 +1,6 @@
 <?php
 interface ICompra {
-    public function crearCompra($compra);
-    public function obtenerCompras();
+    public function crearCompra($idcompra);
+    public function obtenerCompras($idcompra);
 }
 ?>

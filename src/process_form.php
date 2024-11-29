@@ -1,5 +1,4 @@
 <?php
-echo 'Ruta: ' . realpath('config/database.php');
 require_once 'config/database.php'; // Ajusta la ruta si es necesario
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $categoria = $_POST['tipo']; // Cambiado para coincidir con el campo del formulario
     $precio = $_POST['precio'];
     $urlimagen = $_POST['imagen'];
+    $cantidad = $_POST['cantidad'];
 
     // Crear una instancia de la conexión
     $database = new Database();
@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($conn) {
         try {
             // Preparar la consulta SQL
-            $sql = "INSERT INTO libros (name, autor, descripcion, categoria, precio, urlimagen) 
-                    VALUES (:nombre, :autor, :descripcion, :categoria, :precio, :urlimagen)";
+            $sql = "INSERT INTO libros (name, autor, descripcion, categoria, precio, urlimagen, cantidad) 
+                    VALUES (:nombre, :autor, :descripcion, :categoria, :precio, :urlimagen, :cantidad)";
             $stmt = $conn->prepare($sql);
 
             // Asignar los valores a los parámetros
@@ -29,10 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':categoria', $categoria);
             $stmt->bindParam(':precio', $precio);
             $stmt->bindParam(':urlimagen', $urlimagen);
+            $stmt->bindParam(':cantidad', $cantidad);
 
             // Ejecutar la consulta
             if ($stmt->execute()) {
-                echo "Libro registrado exitosamente.";
+                header("Location: ../frontend/Inventario.html");
             } else {
                 echo "Hubo un error al registrar los datos.";
             }
