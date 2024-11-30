@@ -70,7 +70,8 @@
         <div class="col-12">
             <button class="btn btn-light" type="submit" style="background-color: rgb(149, 109, 150); color: white;">Registrarse</button>
         </div>
-        <a href="InicioSesion.html">Iniciar sesion</a>
+        <a href="InicioSesion.html">¿Ya tienes Cuenta?</a>
+        <a href="index.html" >Cancelar</a>
     </form>
     
 
