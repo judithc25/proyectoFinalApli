@@ -16,7 +16,7 @@
       <a href="Miperfil.php">Mi perfil</a>
     </div>
     <div class="container mt-5">
-        <!-- Filtro de categorías -->
+       
         <div class="row mb-4">
             <div class="col-md-4">
                 <label for="categoryFilter" class="form-label"><b>Filtrar por Categoría:</b></label>
@@ -32,9 +32,9 @@
             </div>
         </div>
 
-        <!-- Contenedor de tarjetas -->
+        
         <div class="row" id="bookCardsContainer">
-            <!-- Las tarjetas se generarán aquí dinámicamente -->
+           
         </div>
     </div>
 
@@ -42,9 +42,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('bookCardsContainer');
             const filterSelect = document.getElementById('categoryFilter');
-            let booksData = []; // Almacena todos los libros para filtrar dinámicamente
+            let booksData = []; 
 
-            // Llamada a la API para obtener libros
+            
             fetch('../src/get_books.php')
                 .then(response => {
                     if (!response.ok) {
@@ -54,8 +54,8 @@
                 })
                 .then(books => {
                     if (Array.isArray(books)) {
-                        booksData = books; // Guarda los libros obtenidos
-                        displayBooks(booksData); // Muestra todos los libros inicialmente
+                        booksData = books; 
+                        displayBooks(booksData); 
                     } else {
                         console.error('La respuesta no contiene un arreglo de libros.');
                     }
@@ -64,9 +64,9 @@
                     console.error('Error al cargar los libros:', error);
                 });
 
-            // Función para mostrar libros filtrados
+           
             function displayBooks(books) {
-                container.innerHTML = ''; // Limpia el contenedor
+                container.innerHTML = ''; 
                 books.forEach(book => {
                     const card = document.createElement('div');
                     card.className = 'col-md-4 mb-4';
@@ -93,15 +93,15 @@
                 });
             }
 
-            // Evento para filtrar libros al cambiar la categoría
+            
             filterSelect.addEventListener('change', () => {
                 const selectedCategory = filterSelect.value;
                 if (selectedCategory === 'Todos') {
-                    displayBooks(booksData); // Muestra todos los libros
+                    displayBooks(booksData); 
                 } else {
-                    // Filtra libros por categoría
+                    
                     const filteredBooks = booksData.filter(book => book.categoria === selectedCategory);
-                    displayBooks(filteredBooks); // Muestra los libros filtrados
+                    displayBooks(filteredBooks); 
                 }
             });
         });

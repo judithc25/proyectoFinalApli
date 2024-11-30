@@ -16,10 +16,10 @@
         <a href="Libros.html">Libros</a>
     </div>
 
-    <!-- Alerta dinámica -->
+    
     <div id="alert" class="alert d-none" role="alert"></div>
 
-    <!-- Formulario -->
+    
     <form id="registrationForm" class="row g-3 needs-validation">
         <div class="col-md-4 position-relative">
             <label for="nombre" class="form-label"><b>Nombre</b></label>
@@ -68,29 +68,28 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <div class="col-12">
-            <button class="btn btn-light" type="submit">Registrarse</button>
+            <button class="btn btn-light" type="submit" style="background-color: rgb(149, 109, 150); color: white;">Registrarse</button>
         </div>
         <a href="InicioSesion.html">Iniciar sesion</a>
     </form>
     
 
-    <!-- JavaScript -->
+   
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita el envío tradicional del formulario
+            event.preventDefault(); 
 
-            const formData = new FormData(this); // Captura los datos del formulario
-
+            const formData = new FormData(this); 
             fetch('../src/registroempleados.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json()) // Convierte la respuesta a JSON
+            .then(response => response.json()) 
             .then(data => {
                 const alertDiv = document.getElementById('alert');
                 alertDiv.className = `alert alert-${data.status === 'success' ? 'success' : 'danger'}`;
                 alertDiv.textContent = data.message;
-                alertDiv.classList.remove('d-none'); // Muestra el mensaje
+                alertDiv.classList.remove('d-none'); 
             })
             .catch(error => {
                 const alertDiv = document.getElementById('alert');

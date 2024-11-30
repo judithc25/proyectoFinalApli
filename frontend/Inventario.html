@@ -100,7 +100,7 @@
         document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.getElementById('productTableBosy');
 
-    // Fetch para obtener los datos de los libros
+    
     fetch('../src/get_books.php')
         .then(response => {
             if (!response.ok) {
@@ -109,12 +109,12 @@
             return response.json();
         })
         .then(data => {
-            // Verifica si data contiene libros
+            
             if (Array.isArray(data)) {
-                // Limpia el contenido previo de la tabla
+                
                 tableBody.innerHTML = '';
 
-                // Itera sobre los datos y los agrega a la tabla
+                
                 data.forEach(book => {
                     const row = document.createElement('tr');
                     row.innerHTML = `

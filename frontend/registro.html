@@ -20,42 +20,42 @@
     <form id="registrationForm1" class="row g-3 needs-validation">
       <div class="col-md-4 position-relative">
           <label for="nombre" class="form-label"><b>Nombre</b></label>
-          <input type="text" class="form-control" id="nombre" name="nombre" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="nombre" name="nombre" required >
       </div>
       <div class="col-md-4 position-relative">
           <label for="apellido" class="form-label"><b>Apellido</b></label>
-          <input type="text" class="form-control" id="apellido" name="apellido" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="apellido" name="apellido" required >
       </div>
       <div class="col-md-4 position-relative">
           <label for="usuario" class="form-label"><b>Usuario</b></label>
-          <input type="text" class="form-control" id="usuario" name="usuario" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="usuario" name="usuario" required >
       </div>
       <div class="col-md-3 position-relative">
           <label for="telefono" class="form-label"><b>Número de Teléfono</b></label>
-          <input type="text" class="form-control" id="telefono" name="telefono" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="telefono" name="telefono" required >
       </div>
       <div class="col-md-3 position-relative">
           <label for="correo" class="form-label"><b>Correo</b></label>
-          <input type="email" class="form-control" id="correo" name="correo" required style="background-color: #db9db6ad;">
+          <input type="email" class="form-control" id="correo" name="correo" required >
       </div>
       <div class="col-md-3 position-relative">
           <label for="direccion" class="form-label"><b>Dirección</b></label>
-          <input type="text" class="form-control" id="direccion" name="direccion" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="direccion" name="direccion" required >
       </div>
       <div class="col-md-3 position-relative">
           <label for="ciudad" class="form-label"><b>Ciudad</b></label>
-          <input type="text" class="form-control" id="ciudad" name="ciudad" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="ciudad" name="ciudad" required >
       </div>
       <div class="col-md-3 position-relative">
           <label for="estado" class="form-label"><b>Estado</b></label>
-          <input type="text" class="form-control" id="estado" name="estado" required style="background-color: #db9db6ad;">
+          <input type="text" class="form-control" id="estado" name="estado" required >
       </div>
       <div class="col-md-3 position-relative">
           <label for="password" class="form-label"><b>Contraseña</b></label>
-          <input type="password" class="form-control" id="password" name="password" required style="background-color: #db9db6ad;">
+          <input type="password" class="form-control" id="password" name="password" required >
       </div>
       <div class="col-12">
-          <button class="btn btn-light" type="submit">Registrarse</button>
+          <button class="btn btn-light" type="submit" style="background-color: rgb(149, 109, 150); color: white;">Registrarse</button>
       </div>
       <a href="index.html" >Cancelar</a>
       <a href="registroEmpleado.php" >¿Quieres ser empleado?</a>
@@ -63,20 +63,19 @@
   
   <script>
     document.getElementById('registrationForm1').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita el envío tradicional del formulario
-
-            const formData = new FormData(this); // Captura los datos del formulario
+            event.preventDefault(); 
+            const formData = new FormData(this); 
 
             fetch('../src/registro.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json()) // Convierte la respuesta a JSON
+            .then(response => response.json()) 
             .then(data => {
                 const alertDiv = document.getElementById('alert');
                 alertDiv.className = `alert alert-${data.status === 'success' ? 'success' : 'danger'}`;
                 alertDiv.textContent = data.message;
-                alertDiv.classList.remove('d-none'); // Muestra el mensaje
+                alertDiv.classList.remove('d-none'); 
             })
             .catch(error => {
                 const alertDiv = document.getElementById('alert');

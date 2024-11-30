@@ -1,28 +1,28 @@
 <?php
-require_once 'config/database.php'; // Ajusta la ruta si es necesario
+require_once 'config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Capturar los datos del formulario
+    
     $nombre = $_POST['nombre'];
     $autor = $_POST['autor'];
     $descripcion = $_POST['descripcion'];
-    $categoria = $_POST['tipo']; // Cambiado para coincidir con el campo del formulario
+    $categoria = $_POST['tipo']; 
     $precio = $_POST['precio'];
     $urlimagen = $_POST['imagen'];
     $cantidad = $_POST['cantidad'];
 
-    // Crear una instancia de la conexión
+   
     $database = new Database();
     $conn = $database->getConnection();
 
     if ($conn) {
         try {
-            // Preparar la consulta SQL
+            
             $sql = "INSERT INTO libros (name, autor, descripcion, categoria, precio, urlimagen, cantidad) 
                     VALUES (:nombre, :autor, :descripcion, :categoria, :precio, :urlimagen, :cantidad)";
             $stmt = $conn->prepare($sql);
 
-            // Asignar los valores a los parámetros
+            
             $stmt->bindParam(':nombre', $nombre);
             $stmt->bindParam(':autor', $autor);
             $stmt->bindParam(':descripcion', $descripcion);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':urlimagen', $urlimagen);
             $stmt->bindParam(':cantidad', $cantidad);
 
-            // Ejecutar la consulta
+            
             if ($stmt->execute()) {
                 header("Location: ../frontend/Inventario.html");
             } else {

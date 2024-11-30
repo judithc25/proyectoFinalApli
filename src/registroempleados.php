@@ -4,34 +4,34 @@ header('Content-Type: application/json'); // Establece el tipo de respuesta como
 require_once 'config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Capturar los datos del formulario
+    
     $nombre = $_POST['nombre'] ?? null;
     $apellido = $_POST['apellido'] ?? null;
     $telefono = $_POST['telefono'] ?? null;
     $correo = $_POST['correo'] ?? null;
     $contratacion = $_POST['contratacion'] ?? null;
-    $id_puesto = $_POST['puesto'] ?? null; // Capturar el ID del puesto seleccionado
+    $id_puesto = $_POST['puesto'] ?? null; 
     $usuario = $_POST['usuario'] ?? null;
     $password = isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : null;
 
-    // Validar que los campos requeridos no estén vacíos
+   
     if (!$nombre || !$apellido || !$telefono || !$correo || !$contratacion || !$id_puesto || !$usuario || !$password) {
         echo json_encode(['status' => 'error', 'message' => 'Por favor, completa todos los campos obligatorios.']);
         exit();
     }
 
-    // Conectar con la base de datos
+    
     $database = new Database();
     $conn = $database->getConnection();
 
     if ($conn) {
         try {
-            // Preparar la consulta SQL
+            
             $sql = "INSERT INTO empleados (nombre, apellido, telefono, correo, contratacion, id_puesto, usuario, password) 
                     VALUES (:nombre, :apellido, :telefono, :correo, :contratacion, :id_puesto, :usuario, :password)";
             $stmt = $conn->prepare($sql);
 
-            // Asignar los valores a los parámetros
+            
             $stmt->bindParam(':nombre', $nombre);
             $stmt->bindParam(':apellido', $apellido);
             $stmt->bindParam(':telefono', $telefono);
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':usuario', $usuario);
             $stmt->bindParam(':password', $password);
 
-            // Ejecutar la consulta
+            
             if ($stmt->execute()) {
                 echo json_encode(['status' => 'success', 'message' => 'Registro exitoso.']);
             } else {
