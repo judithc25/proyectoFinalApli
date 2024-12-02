@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json'); // Establece el tipo de respuesta como JSON
+header('Content-Type: application/json'); 
 
 require_once 'config/database.php';
 
